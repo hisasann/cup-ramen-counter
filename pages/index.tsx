@@ -6,12 +6,14 @@ type Props = {
   count: number;
 }
 
+// SSG のタイミングで呼び出される Props を渡すための非同期処理
 export async function getStaticProps() {
   const key = {
     headers: {'X-API-KEY': process.env.API_KEY ?? ''},
   };
   const res = await fetch('https://hisasann.microcms.io/api/v1/cup-ramen-counter', key);
   const json = await res.json()
+
   return {
     props: {
       count: json.count,
