@@ -113,6 +113,10 @@
   margin-left: 0.5rem;
 }
 
+.count {
+  font-size: 2rem;
+}
+
 @media (max-width: 600px) {
   .grid {
     width: 100%;
