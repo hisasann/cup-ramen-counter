@@ -1,5 +1,11 @@
 name: build-jamstack
-on: [push]
+on:
+  push:
+    branches:
+      - main
+  repository_dispatch:
+    types:
+      - build
 jobs:
   log:
     runs-on: ubuntu-latest
