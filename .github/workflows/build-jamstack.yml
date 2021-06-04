@@ -1,0 +1,7 @@
+name: build-jamstack
+on: [push]
+jobs:
+  log:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "hello ${{ github.event_name }} world."
