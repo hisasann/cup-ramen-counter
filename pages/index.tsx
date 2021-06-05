@@ -21,18 +21,21 @@ export async function getStaticProps() {
   }
 }
 
+const name = `ひささん`
+const title = `${name}がカップラーメン食べた回数`;
+
 export default function Home({ count }: Props) {
   return (
     <div className={styles.container}>
       <Head>
-        <title>カップラーメン食べた回数</title>
-        <meta name="description" content="カップラーメン食べた回数" />
+        <title>{title}</title>
+        <meta name="description" content="`${title}`" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          カップラーメン食べた回数
+          {name}{title}
         </h1>
 
         <div className={styles.count}>
