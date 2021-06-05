@@ -48,6 +48,7 @@ jobs:
                 path: node_modules
                 key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
       - run: yarn
+      - run: yarn build
 
       - name: Upload dist files to S3
         env:
