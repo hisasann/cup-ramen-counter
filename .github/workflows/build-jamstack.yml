@@ -1,8 +1,5 @@
 name: build-jamstack
 on:
-  push:
-    branches:
-      - main
   workflow_dispatch:
     inputs:
       description: 'Person to greet'
@@ -12,5 +9,5 @@ jobs:
   log:
     runs-on: ubuntu-latest
     steps:
-      - run: |
-        echo "hello ${{ github.event_name }} world."
+    - run: |
+      echo "hello ${{ github.event_name }} world."
