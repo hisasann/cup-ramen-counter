@@ -49,6 +49,8 @@ jobs:
                 key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
       - run: yarn
       - run: yarn build
+        env:
+          API_KEY: ${{ secrets.API_KEY }}
 
       - name: Upload dist files to S3
         env:
