@@ -2,8 +2,12 @@ name: build-jamstack
 on:
   workflow_dispatch:
     inputs:
-      description: 'Person to greet'
-        required: false
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'warning'
+      tags:
+        description: 'Test scenario tags'
 
 jobs:
   log:
