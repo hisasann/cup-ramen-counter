@@ -28,7 +28,7 @@ export default function Home({ count }: Props) {
   return (
     <div className={styles.container}>
       <Head>
-        <title>{title}</title>
+        <title>{name}{title}</title>
         <meta name="description" content="`${name}${title}`" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
