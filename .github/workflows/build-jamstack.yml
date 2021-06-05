@@ -49,3 +49,8 @@ jobs:
                 key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
       - run: yarn
 
+      - name: Upload dist files to S3
+        env:
+          S3_BUCKET_NAME: ${{ secrets.S3_BUCKET_NAME }}
+        run: aws s3 sync ./out s3://$S3_BUCKET_NAME/ --quiet
+
