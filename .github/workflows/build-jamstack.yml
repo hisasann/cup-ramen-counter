@@ -1,20 +1,26 @@
 name: build-jamstack
-on:
-  workflow_dispatch:
-    inputs:
-      logLevel:
-        description: 'Log level'
-        required: true
-        default: 'warning'
-      tags:
-        description: 'Test scenario tags'
 
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
 
 jobs:
-  printInputs:
+  build:
     runs-on: ubuntu-latest
+    timeout-minutes: 60
+    strategy:
+      matrix:
+        node-version: [12.16.1]
     steps:
-    - run: |
-        echo "Log level: ${{ github.event.inputs.logLevel }}"
-        echo "Tags: ${{ github.event.inputs.tags }}"
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Display version of Node.js, npm, Yarn
+        run: |
+          node -v
+          npm -v
+          yarn --version
 
