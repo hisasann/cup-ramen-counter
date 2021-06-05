@@ -22,14 +22,14 @@ export async function getStaticProps() {
 }
 
 const name = `ひささん`
-const title = `${name}がカップラーメン食べた回数`;
+const title = `がカップラーメン食べた回数`;
 
 export default function Home({ count }: Props) {
   return (
     <div className={styles.container}>
       <Head>
         <title>{title}</title>
-        <meta name="description" content="`${title}`" />
+        <meta name="description" content="`${name}${title}`" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
