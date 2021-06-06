@@ -1,5 +1,6 @@
 import Head from 'next/head'
 //import Image from 'next/image'
+import React, { useEffect } from 'react'
 import styles from '../styles/Home.module.css'
 
 type Props = {
@@ -21,10 +22,14 @@ export async function getStaticProps() {
   }
 }
 
-const name = `ひささん`
-const title = `がカップラーメン食べた回数`;
+const name = `@hisasann`
+const title = `がカップラーメンを食べた回数カウンター`;
 
 export default function Home({ count }: Props) {
+  useEffect(() => {
+    location.hash = '🍜';
+  }, [])
+
   return (
     <div className={styles.container}>
       <Head>
@@ -40,8 +45,15 @@ export default function Home({ count }: Props) {
 
         <div className={styles.count}>
           <p>
-            { count }
+            { count }🍜
           </p>
+        </div>
+        <div className={styles.badge}>
+          <div><a href="https://github.com/hisasann/cup-ramen-counter/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc"><img src="https://img.shields.io/github/issues/hisasann/cup-ramen-counter" alt="GitHub issues" /></a></div>
+          <div><a href="https://github.com/hisasann/cup-ramen-counter"><img src="https://img.shields.io/github/forks/hisasann/cup-ramen-counter" alt="GitHub forks" /></a></div>
+          <div><a href="https://github.com/hisasann/cup-ramen-counter"><img src="https://img.shields.io/github/stars/hisasann/cup-ramen-counter" alt="GitHub stars" /></a></div>
+          <div><a href="https://github.com/hisasann/cup-ramen-counter/blob/main/license.md"><img src="https://img.shields.io/github/license/hisasann/cup-ramen-counter" alt="GitHub license" /></a></div>
+          <div><a href="https://twitter.com/hisasann"><img src="https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com%2Fhisasann%2Fcup-ramen-counter" alt="Twitter" /></a></div>
         </div>
       </main>
 
