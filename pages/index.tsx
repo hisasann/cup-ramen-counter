@@ -27,7 +27,7 @@ const title = `がカップラーメンを食べた回数カウンター`;
 
 export default function Home({ count }: Props) {
   useEffect(() => {
-    location.hash = '🍜';
+    // location.hash = '🍜';
   }, [])
 
   return (
