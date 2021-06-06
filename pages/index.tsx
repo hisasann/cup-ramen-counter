@@ -34,7 +34,7 @@ export default function Home({ count }: Props) {
     <div className={styles.container}>
       <Head>
         <title>{name}{title}</title>
-        <meta name="description" content="`${name}${title}`" />
+        <meta name="description" content="@hisasannがカップラーメンをなるべく食べないように健康に気を使うために作ったサイトです。" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
