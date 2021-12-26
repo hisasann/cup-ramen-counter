@@ -26,7 +26,7 @@ export async function getStaticProps() {
 }
 
 const name = `@hisasann`;
-const title = `がカップラーメンを食べた回数カウンター`;
+const title = `がカップラーメンを食べた回数カウンター from 2021/06`;
 
 export default function Home({ count }: Props) {
   useEffect(() => {
